@@ -26,6 +26,7 @@ function init(){
         }
         run($(link),audio[0]);
     });
+    $("#shuffle").click(shuffle);
 }
 
 function run(link, player){
@@ -35,4 +36,11 @@ function run(link, player){
         $('#name')[0].innerHTML = link.attr('href');
         audio[0].load();
         audio[0].play();
+}
+
+function shuffle() {
+    var ul = $("#playlist")[0]
+    for (var i = ul.children.length; i >= 0; i--) {
+        ul.appendChild(ul.children[Math.random() * i | 0]);
+    }    
 }

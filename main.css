@@ -1,10 +1,13 @@
 body {
     font-family: sans-serif;
 }
-#dirs, #playlist, #audio audio, #name { 
+#dirs, #playlist_wrapper, #audio audio, #name{ 
     background:#666;
     width:400px;
     padding:20px;
+}
+#shuffle { 
+    margin-bottom: 5px;
 }
 #audio #name {
     padding-bottom: 0px;
@@ -27,3 +30,10 @@ li a {
 li a:hover {
     text-decoration:none;
 }
+#playlist {
+    padding: 0px;
+}
+#audio {
+    margin-bottom: 16px;
+}
+

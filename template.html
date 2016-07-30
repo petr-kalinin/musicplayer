@@ -25,15 +25,16 @@
             Sorry, your browser does not support HTML5 audio.
         </audio>
     </div>
-    <ul id="playlist">
-        {% for file in files %}
-        
-        <!--<li class="active"><a href="http://www.archive.org/download/bolero_69/Bolero.mp3">Ravel Bolero</a></li>-->
-        <li {% if loop.index is equalto 1 %}class="active"{% endif %}>
-            <a href="{{ file }}">{{ file }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+    <div id="playlist_wrapper">
+        <button id="shuffle" title="Перемешать">X</button>
+        <ul id="playlist">
+            {% for file in files %}
+                <li {% if loop.index is equalto 1 %}class="active"{% endif %}>
+                    <a href="{{ file }}">{{ file }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endif %}
 </body>
 </html>
