@@ -18,10 +18,13 @@
     {% endfor %}
 </ul>
 {% if files %}
-    <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
-        <source type="audio/mp3" src="{{ files[0] }}">
-        Sorry, your browser does not support HTML5 audio.
-    </audio>
+    <div id="audio">
+        <div id="name">{{ files[0] }}</div>
+        <audio preload="auto" tabindex="0" controls="" type="audio/mpeg">
+            <source type="audio/mp3" src="{{ files[0] }}">
+            Sorry, your browser does not support HTML5 audio.
+        </audio>
+    </div>
     <ul id="playlist">
         {% for file in files %}
         

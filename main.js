@@ -32,6 +32,7 @@ function run(link, player){
         player.src = link.attr('href');
         par = link.parent();
         par.addClass('active').siblings().removeClass('active');
+        $('#name')[0].innerHTML = link.attr('href');
         audio[0].load();
         audio[0].play();
 }
