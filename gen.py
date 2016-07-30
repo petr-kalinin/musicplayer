@@ -2,11 +2,19 @@
 import os
 import os.path
 import jinja2
+import shutil
     
 with open("template.html") as f:
     text = ''.join(f.readlines())
 
 template = jinja2.Template(text)
+
+
+os.chdir("music")
+
+shutil.copy("../jquery-3.1.0.slim.min.js", ".")  
+shutil.copy("../main.css", ".")
+shutil.copy("../main.js", ".")
 
 for directory, subdirs, files in os.walk("."):
     files = filter(lambda f: os.path.splitext(f)[1] == ".mp3", files)
