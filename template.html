@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>{{ title }} — ЛКШ.Музыка</title>
+<script type="text/javascript" src="{{ backlink }}/jquery-3.1.0.slim.min.js"></script>
+<script type="text/javascript" src="{{ backlink }}/main.js"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="{{ backlink }}/main.css">
+</head>
+<body onload="init()">
+<h1>{{ name }}</h1>
+<ul id="dirs">
+    {% if not backlink is equalto '.' %}
+        <li><a href="{{ backlink }}/index.html">В начало</a></li>
+        <li><a href="../index.html">На уровень выше</a></li>
+    {% endif %}
+    {% for dir in subdirs %}
+        <li><a href="{{ dir }}/index.html">{{ dir }}</a></li>
+    {% endfor %}
+</ul>
+{% if files %}
+    <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg">
+        <source type="audio/mp3" src="{{ files[0] }}">
+        Sorry, your browser does not support HTML5 audio.
+    </audio>
+    <ul id="playlist">
+        {% for file in files %}
+        
+        <!--<li class="active"><a href="http://www.archive.org/download/bolero_69/Bolero.mp3">Ravel Bolero</a></li>-->
+        <li {% if loop.index is equalto 1 %}class="active"{% endif %}>
+            <a href="{{ file }}">{{ file }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>
