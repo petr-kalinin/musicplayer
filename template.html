@@ -19,9 +19,9 @@
 </ul>
 {% if files %}
     <div id="audio">
-        <div id="name">{{ files[0] }}</div>
+        <div id="name">{{ files[0][0] }}</div>
         <audio preload="auto" tabindex="0" controls="" type="audio/mpeg">
-            <source type="audio/mp3" src="{{ files[0] }}">
+            <source type="audio/mp3" src="{{ files[0][1] }}">
             Sorry, your browser does not support HTML5 audio.
         </audio>
     </div>
@@ -30,7 +30,7 @@
         <ul id="playlist">
             {% for file in files %}
                 <li {% if loop.index is equalto 1 %}class="active"{% endif %}>
-                    <a href="{{ file }}">{{ file }}</a>
+                    <a href="{{ file[1] }}">{{ file[0] }}</a>
                 </li>
             {% endfor %}
         </ul>
