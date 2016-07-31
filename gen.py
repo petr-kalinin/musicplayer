@@ -4,9 +4,9 @@ import os.path
 import jinja2
 import shutil
     
-backlink_prefix = "../"
-files_prefix = "/home/petr/15_16/16_sis/music/music"
-output_directory = "output"
+backlink_prefix = ""  # "../"
+files_prefix = ""  # "/home/petr/15_16/16_sis/music/music"
+output_directory = "music"  # "output"
 
 
 with open("template.html") as f:
